@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from calendar import month
-from sys import prefix
+import click
 import pandas as pd
 from sqlalchemy import create_engine
 from tqdm.auto import tqdm
-import click
+
 
 
 # Read a sample of the data
@@ -45,7 +44,9 @@ parse_dates = [
 @click.option('--year', default=2021, show_default=True, type=int, help='Data year')
 @click.option('--month', default=1, show_default=True, type=int, help='Data month (1-12)')
 @click.option('--target-table', default='yellow_taxi_data', show_default=True, help='Target table name')
-def run(pg_user, pg_pass, pg_host, pg_port, pg_db, year, month, target_table):
+@click.option('--chunksize', default=100000, show_default=True, type=int, help='Number of rows per chunk to process')
+
+def run(pg_user, pg_pass, pg_host, pg_port, pg_db, year, month, target_table, chunksize):
     prefix = 'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/'
     url = f'{prefix}yellow_tripdata_{year}-{month:02d}.csv.gz'
     engine = create_engine(f'postgresql://{pg_user}:{pg_pass}@{pg_host}:{pg_port}/{pg_db}')
@@ -55,7 +56,7 @@ def run(pg_user, pg_pass, pg_host, pg_port, pg_db, year, month, target_table):
         dtype=dtype,
         parse_dates=parse_dates,
         iterator=True,
-        chunksize=100000,
+        chunksize=chunksize,
     )
     
     
