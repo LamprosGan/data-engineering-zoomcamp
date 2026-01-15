@@ -27,7 +27,7 @@ dtype = {
 @click.option('--pg-db', default='ny_taxi', show_default=True, help='Postgres database')
 @click.option('--target-table', default='zones', show_default=True, help='Target table name')
 def main(csv_url, pg_user, pg_pass, pg_host, pg_port, pg_db, target_table):
-    """Load a local taxi zone lookup CSV into Postgres as the `zones` table."""
+    
     try:
         df = pd.read_csv(csv_url, dtype=dtype)
     except Exception as e:
@@ -37,9 +37,9 @@ def main(csv_url, pg_user, pg_pass, pg_host, pg_port, pg_db, target_table):
     conn_str = f'postgresql://{pg_user}:{pg_pass}@{pg_host}:{pg_port}/{pg_db}'
     try:
         engine = create_engine(conn_str)
-        # create table schema
+        
         df.head(0).to_sql(name=target_table, con=engine, if_exists='replace', index=False)
-        # append data
+        
         df.to_sql(name=target_table, con=engine, if_exists='append', index=False)
     except Exception as e:
         print(f"Failed to write to database {pg_db} on {pg_host}:{pg_port}: {e}", file=sys.stderr)
