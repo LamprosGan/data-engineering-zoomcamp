@@ -43,7 +43,7 @@ For this homework, we leverage the environment and tools we built during the lea
 
 
 - **PostgreSQL database** is already running via Docker Compose.  
-  - Compose file location: [Docker-SQL-Terraform/terrademo/docker-compose.yaml](https://github.com/LamprosGan/data-engineering-zoomcamp/blob/main/Docker-SQL-Terraform/pipeline/docker-compose.yaml)
+  - Compose file location: [https://github.com/LamprosGan/data-engineering-zoomcamp/blob/main/Docker-SQL-Terraform/pipeline/docker-compose.yaml](https://github.com/LamprosGan/data-engineering-zoomcamp/blob/main/Docker-SQL-Terraform/pipeline/docker-compose.yaml)
   - Postgres image: `postgres:16`  
   - pgAdmin image: `dpage/pgadmin4`  
   - Port mappings:  
