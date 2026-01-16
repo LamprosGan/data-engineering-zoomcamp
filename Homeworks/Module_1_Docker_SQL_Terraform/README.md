@@ -203,8 +203,8 @@ In this section of the homework, we prepared the environment and created resourc
 Following the procedure described in the course, we:
 
 1. Created the Terraform configuration files:
-   - `main.tf` → defines the GCP resources (e.g., a Cloud Storage bucket, BigQuery dataset)  
-   - `variables.tf` → stores configurable variables for our resources  
+   - `main.tf` [https://github.com/LamprosGan/data-engineering-zoomcamp/blob/main/Docker-SQL-Terraform/terrademo/main.tf] → defines the GCP resources (e.g., a Cloud Storage bucket, BigQuery dataset)  
+   - `variables.tf`[https://github.com/LamprosGan/data-engineering-zoomcamp/blob/main/Docker-SQL-Terraform/terrademo/varriables.tf] → stores configurable variables for our resources  
 
 2. Used Terraform commands to manage our infrastructure:
 
