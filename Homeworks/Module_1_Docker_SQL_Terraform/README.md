@@ -70,7 +70,7 @@ Next, we needed to upload the **green taxi trips data for November 2025** to the
 - **Dataset source (Parquet):**  
 [green_tripdata_2025-11.parquet](https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-11.parquet)  
 - **Target table in Postgres:** `green_trips_2025_11`  
-- **Script used:** `green_trip_data.py`  
+- **Script used:** [https://github.com/LamprosGan/data-engineering-zoomcamp/blob/main/Docker-SQL-Terraform/Homeworks/Module_1_Docker_SQL_Terraform/green_trip_data.py] 
 - **Virtual environment:** `.venv` in `pipeline` folder  
 
 ---
