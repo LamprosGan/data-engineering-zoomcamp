@@ -1,0 +1,6 @@
+
+
+# 02_Workfolows/.gitignore
+.env_encoded
+keys/
+*.json
